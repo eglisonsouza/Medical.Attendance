@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
@@ -15,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Building Blocks\Smart.Essentials.HealthCheck.SqlServer\Smart.Essentials.HealthCheck.SqlServer.csproj" />
+    <ProjectReference Include="..\Medical.Attendance.Application\Medical.Attendance.Application.csproj" />
     <ProjectReference Include="..\Medical.Attendance.Infra\Medical.Attendance.Infra.csproj" />
   </ItemGroup>
 

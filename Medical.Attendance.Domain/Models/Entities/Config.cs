@@ -2,9 +2,9 @@
 
 namespace Medical.Attendance.Domain.Models.Entities
 {
-    public sealed class Config : BaseEntity
+    public sealed class Config(bool isWorkingHolidays) : BaseEntity
     {
-        public bool IsWorkingHolidays { get; private set; }
+        public bool IsWorkingHolidays { get; private set; } = isWorkingHolidays;
         public List<Day> WorkDays { get; private set; }
     }
 }

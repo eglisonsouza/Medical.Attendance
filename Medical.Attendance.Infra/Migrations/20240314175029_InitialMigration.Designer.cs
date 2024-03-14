@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Medical.Attendance.Infra.Migrations
 {
     [DbContext(typeof(SqlServerDbContext))]
-    [Migration("20240314130447_InitialMigration")]
+    [Migration("20240314175029_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -69,7 +69,7 @@ namespace Medical.Attendance.Infra.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("AttendanceMedical");
+                    b.ToTable("AttendancesMedical");
                 });
 
             modelBuilder.Entity("Medical.Attendance.Domain.Models.Entities.Config", b =>
@@ -83,7 +83,7 @@ namespace Medical.Attendance.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Config");
+                    b.ToTable("Configs");
                 });
 
             modelBuilder.Entity("Medical.Attendance.Domain.Models.Entities.Day", b =>
@@ -106,7 +106,7 @@ namespace Medical.Attendance.Infra.Migrations
 
                     b.HasIndex("ConfigId");
 
-                    b.ToTable("Day");
+                    b.ToTable("Days");
                 });
 
             modelBuilder.Entity("Medical.Attendance.Domain.Models.Entities.Doctor", b =>
@@ -126,7 +126,7 @@ namespace Medical.Attendance.Infra.Migrations
 
                     b.HasIndex("ConfigId");
 
-                    b.ToTable("Doctor");
+                    b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("Medical.Attendance.Domain.Models.Entities.HourDay", b =>
@@ -148,7 +148,7 @@ namespace Medical.Attendance.Infra.Migrations
 
                     b.HasIndex("DayId");
 
-                    b.ToTable("HourDay");
+                    b.ToTable("HoursDays");
                 });
 
             modelBuilder.Entity("Medical.Attendance.Domain.Models.Entities.Patient", b =>
@@ -170,7 +170,7 @@ namespace Medical.Attendance.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Patient");
+                    b.ToTable("Patients");
                 });
 
             modelBuilder.Entity("Medical.Attendance.Domain.Models.Entities.AttendanceMedical", b =>

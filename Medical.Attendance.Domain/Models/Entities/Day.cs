@@ -2,12 +2,12 @@
 
 namespace Medical.Attendance.Domain.Models.Entities
 {
-    public sealed class Day : BaseEntity
+    public sealed class Day(string dayName, int sequential, Guid configId) : BaseEntity
     {
-        public string DayName { get; private set; }
-        public int Sequencial { get; private set; }
+        public string DayName { get; private set; } = dayName;
+        public int Sequential { get; private set; } = sequential;
+        public Guid ConfigId { get; private set; } = configId;
         public List<HourDay> Hours { get; private set; }
-        public Guid ConfigId { get; private set; }
         public Config Config { get; private set; }
     }
 }

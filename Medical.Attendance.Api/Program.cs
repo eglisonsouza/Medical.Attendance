@@ -3,7 +3,8 @@ using Medical.Attendance.Ioc;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
-    .AddInfra(builder.Configuration);
+    .AddInfra(builder.Configuration)
+    .AddApplication();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

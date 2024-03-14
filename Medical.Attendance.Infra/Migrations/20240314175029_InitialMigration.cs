@@ -11,7 +11,7 @@ namespace Medical.Attendance.Infra.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Config",
+                name: "Configs",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -19,11 +19,11 @@ namespace Medical.Attendance.Infra.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Config", x => x.Id);
+                    table.PrimaryKey("PK_Configs", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Patient",
+                name: "Patients",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -33,11 +33,11 @@ namespace Medical.Attendance.Infra.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Patient", x => x.Id);
+                    table.PrimaryKey("PK_Patients", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Day",
+                name: "Days",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -47,17 +47,17 @@ namespace Medical.Attendance.Infra.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Day", x => x.Id);
+                    table.PrimaryKey("PK_Days", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Day_Config_ConfigId",
+                        name: "FK_Days_Configs_ConfigId",
                         column: x => x.ConfigId,
-                        principalTable: "Config",
+                        principalTable: "Configs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Doctor",
+                name: "Doctors",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -66,17 +66,17 @@ namespace Medical.Attendance.Infra.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Doctor", x => x.Id);
+                    table.PrimaryKey("PK_Doctors", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Doctor_Config_ConfigId",
+                        name: "FK_Doctors_Configs_ConfigId",
                         column: x => x.ConfigId,
-                        principalTable: "Config",
+                        principalTable: "Configs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "HourDay",
+                name: "HoursDays",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -86,17 +86,17 @@ namespace Medical.Attendance.Infra.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_HourDay", x => x.Id);
+                    table.PrimaryKey("PK_HoursDays", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_HourDay_Day_DayId",
+                        name: "FK_HoursDays_Days_DayId",
                         column: x => x.DayId,
-                        principalTable: "Day",
+                        principalTable: "Days",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "AttendanceMedical",
+                name: "AttendancesMedical",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -113,44 +113,44 @@ namespace Medical.Attendance.Infra.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AttendanceMedical", x => x.Id);
+                    table.PrimaryKey("PK_AttendancesMedical", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AttendanceMedical_Doctor_DoctorId",
+                        name: "FK_AttendancesMedical_Doctors_DoctorId",
                         column: x => x.DoctorId,
-                        principalTable: "Doctor",
+                        principalTable: "Doctors",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AttendanceMedical_Patient_PatientId",
+                        name: "FK_AttendancesMedical_Patients_PatientId",
                         column: x => x.PatientId,
-                        principalTable: "Patient",
+                        principalTable: "Patients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AttendanceMedical_DoctorId",
-                table: "AttendanceMedical",
+                name: "IX_AttendancesMedical_DoctorId",
+                table: "AttendancesMedical",
                 column: "DoctorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AttendanceMedical_PatientId",
-                table: "AttendanceMedical",
+                name: "IX_AttendancesMedical_PatientId",
+                table: "AttendancesMedical",
                 column: "PatientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Day_ConfigId",
-                table: "Day",
+                name: "IX_Days_ConfigId",
+                table: "Days",
                 column: "ConfigId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Doctor_ConfigId",
-                table: "Doctor",
+                name: "IX_Doctors_ConfigId",
+                table: "Doctors",
                 column: "ConfigId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_HourDay_DayId",
-                table: "HourDay",
+                name: "IX_HoursDays_DayId",
+                table: "HoursDays",
                 column: "DayId");
         }
 
@@ -158,22 +158,22 @@ namespace Medical.Attendance.Infra.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AttendanceMedical");
+                name: "AttendancesMedical");
 
             migrationBuilder.DropTable(
-                name: "HourDay");
+                name: "HoursDays");
 
             migrationBuilder.DropTable(
-                name: "Doctor");
+                name: "Doctors");
 
             migrationBuilder.DropTable(
-                name: "Patient");
+                name: "Patients");
 
             migrationBuilder.DropTable(
-                name: "Day");
+                name: "Days");
 
             migrationBuilder.DropTable(
-                name: "Config");
+                name: "Configs");
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Medical.Attendance.Infra.Persistence.EntitiesConfiguration
                 .IsRequired();
 
             builder
-                .Property(p => p.Sequencial)
+                .Property(p => p.Sequential)
                 .HasMaxLength(1)
                 .IsRequired();
 
