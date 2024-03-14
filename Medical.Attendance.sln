@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34607.79
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medical.Attendence.Api", "Medical.Attendence.Api\Medical.Attendence.Api.csproj", "{1F1F3E8C-A0A3-4ABB-8EE2-515C0F64792A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medical.Attendance.Api", "Medical.Attendance.Api\Medical.Attendance.Api.csproj", "{1F1F3E8C-A0A3-4ABB-8EE2-515C0F64792A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medical.Attendence.Application", "Medical.Attendence.Application\Medical.Attendence.Application.csproj", "{F0CE396F-AD78-4499-88CA-A6CAA1731F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medical.Attendance.Application", "Medical.Attendance.Application\Medical.Attendance.Application.csproj", "{F0CE396F-AD78-4499-88CA-A6CAA1731F0D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medical.Attendence.Domain", "Medical.Attendence.Domain\Medical.Attendence.Domain.csproj", "{59637B77-66A6-4A10-B262-494798E4F235}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medical.Attendance.Domain", "Medical.Attendance.Domain\Medical.Attendance.Domain.csproj", "{59637B77-66A6-4A10-B262-494798E4F235}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medical.Attendence.Infra", "Medical.Attendence.Infra\Medical.Attendence.Infra.csproj", "{EDC066F8-C28C-491A-BEC7-4350B83B5449}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medical.Attendance.Infra", "Medical.Attendance.Infra\Medical.Attendance.Infra.csproj", "{EDC066F8-C28C-491A-BEC7-4350B83B5449}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medical.Attendence.Ioc", "Medical.Attendence.Ioc\Medical.Attendence.Ioc.csproj", "{92AC4F6E-1D3C-4347-B1E1-D151E5EA0375}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medical.Attendance.Ioc", "Medical.Attendance.Ioc\Medical.Attendance.Ioc.csproj", "{92AC4F6E-1D3C-4347-B1E1-D151E5EA0375}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medical.Attendence.UnitTests", "Medical.Attendence.UnitTests\Medical.Attendence.UnitTests.csproj", "{B188D7D3-82F3-43DB-B7F6-FC355B70997F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medical.Attendance.UnitTests", "Medical.Attendance.UnitTests\Medical.Attendance.UnitTests.csproj", "{B188D7D3-82F3-43DB-B7F6-FC355B70997F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
