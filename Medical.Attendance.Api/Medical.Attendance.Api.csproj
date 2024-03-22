@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Medical.Attendence.Ioc\Medical.Attendance.Ioc.csproj" />
+    <ProjectReference Include="..\Medical.Attendance.Ioc\Medical.Attendance.Ioc.csproj" />
   </ItemGroup>
 
 </Project>
