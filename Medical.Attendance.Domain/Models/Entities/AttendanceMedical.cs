@@ -1,14 +1,9 @@
 ﻿using Medical.Attendance.Domain.Models.Entities.Base;
 using Medical.Attendance.Domain.Models.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Medical.Attendance.Domain.Models.Entities
 {
-    public sealed class Attendance : BaseEntity
+    public sealed class AttendanceMedical : BaseEntity
     {
         public Guid PatientId { get; private set; }
         public Guid DoctorId { get; private set; }
@@ -20,5 +15,8 @@ namespace Medical.Attendance.Domain.Models.Entities
         public AttendanceStatus Status { get; private set; }
         public Guid TransactionId { get; private set; }
         public decimal Value { get; private set; }
+        public Patient Patient { get; set; }
+        public Doctor Doctor { get; set; }
+
     }
 }

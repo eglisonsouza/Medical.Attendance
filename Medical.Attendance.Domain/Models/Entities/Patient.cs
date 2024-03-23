@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Medical.Attendance.Domain.Models.Entities.Base;
 
 namespace Medical.Attendance.Domain.Models.Entities
 {
-    internal class Patient
+    public sealed class Patient : BaseEntity
     {
+        public Guid ClientId { get; private set; }
+        public string Name { get; private set; }
+        public string Phone { get; private set; }
     }
 }
