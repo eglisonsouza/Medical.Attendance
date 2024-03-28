@@ -14,9 +14,9 @@ namespace Medical.Attendance.Application.Events.ConfigEvents.Handlers
         public async Task<ConfigViewModel> Handle(GetConfigCommand request, CancellationToken cancellationToken)
         {
             await GetDoctor(request, cancellationToken);
-            
+
             await GetConfig(cancellationToken);
-            
+
             _configViewModel.Days.ForEach(async d => d.Hours.AddRange(await GetHours(d.Id, cancellationToken)));
 
             return _configViewModel;
