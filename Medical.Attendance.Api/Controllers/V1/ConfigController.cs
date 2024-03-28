@@ -15,5 +15,11 @@ namespace Medical.Attendance.Api.Controllers.V1
         {
             return Ok(await _mediator.Send(command));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAsync([FromQuery] GetConfigCommand command)
+        {
+            return Ok(await _mediator.Send(command));
+        }
     }
 }

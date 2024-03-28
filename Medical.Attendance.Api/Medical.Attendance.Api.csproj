@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Building Blocks\Smart.Essentials.HealthCheck.SqlServer\Smart.Essentials.HealthCheck.SqlServer.csproj" />
     <ProjectReference Include="..\Medical.Attendance.Application\Medical.Attendance.Application.csproj" />
     <ProjectReference Include="..\Medical.Attendance.Ioc\Medical.Attendance.Ioc.csproj" />
   </ItemGroup>

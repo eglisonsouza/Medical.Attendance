@@ -19,11 +19,17 @@ namespace Medical.Attendance.Application.Events.ConfigEvents.Models.ViewsModel
         {
             Doctor.Id = entity.Id;
             Doctor.Name = entity.Name;
+            Id = entity.ConfigId;
         }
 
         public void AddDayFromEntity(Day entity)
         {
             Days.Add(DayViewModel.FromEntity(entity));
+        }
+
+        public void AddDayFromEntity(List<Day> days)
+        {
+            Days.AddRange(days.Select(DayViewModel.FromEntity));
         }
     }
 }

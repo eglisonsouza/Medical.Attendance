@@ -15,6 +15,7 @@ namespace Medical.Attendance.Ioc
         private static void AddMediatRDependencies(this IServiceCollection services)
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(AddConfigHandler).GetTypeInfo().Assembly));
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetConfigHandler).GetTypeInfo().Assembly));
         }
 
 
