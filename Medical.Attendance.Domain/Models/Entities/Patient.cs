@@ -7,5 +7,12 @@ namespace Medical.Attendance.Domain.Models.Entities
         public Guid ClientId { get; set; }
         public string Name { get; private set; }
         public string Phone { get; private set; }
+
+        public Patient(Guid clientId, string name, string phone)
+        {
+            ClientId = clientId;
+            Name = name;
+            Phone = phone;
+        }
     }
 }
