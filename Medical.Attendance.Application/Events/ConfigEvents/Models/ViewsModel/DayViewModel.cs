@@ -2,7 +2,7 @@
 
 namespace Medical.Attendance.Application.Events.ConfigEvents.Models.ViewsModel
 {
-    public class DayViewModel
+    public sealed class DayViewModel
     {
         public Guid Id { get; set; }
         public string DayName { get; set; }

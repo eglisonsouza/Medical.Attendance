@@ -7,7 +7,7 @@ using Medical.Attendance.Infra.Persistence.Configurations;
 
 namespace Medical.Attendance.Application.Events.ConfigEvents.Handlers
 {
-    public class AddConfigHandler(SqlServerDbContext sqlServerDbContext) : IRequestHandler<AddConfigCommand, ConfigViewModel>
+    public sealed class AddConfigHandler(SqlServerDbContext sqlServerDbContext) : IRequestHandler<AddConfigCommand, ConfigViewModel>
     {
         private readonly SqlServerDbContext _sqlServerDbContext = sqlServerDbContext;
         private readonly ConfigViewModel _configViewModel = new();

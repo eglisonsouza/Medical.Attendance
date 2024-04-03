@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Medical.Attendance.Application.Events.ConfigEvents.Handlers
 {
-    public class GetConfigHandler(SqlServerDbContext sqlServerDbContext) : IRequestHandler<GetConfigCommand, ConfigViewModel>
+    public sealed class GetConfigHandler(SqlServerDbContext sqlServerDbContext) : IRequestHandler<GetConfigCommand, ConfigViewModel>
     {
         private readonly SqlServerDbContext _sqlServerDbContext = sqlServerDbContext;
         private readonly ConfigViewModel _configViewModel = new();

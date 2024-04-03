@@ -6,7 +6,7 @@ namespace Medical.Attendance.Api.Controllers.V1
 {
     [ApiController]
     [Route("api/v1/config")]
-    public class ConfigController(IMediator mediator) : ControllerBase
+    public sealed class ConfigController(IMediator mediator) : ControllerBase
     {
         private readonly IMediator _mediator = mediator;
 

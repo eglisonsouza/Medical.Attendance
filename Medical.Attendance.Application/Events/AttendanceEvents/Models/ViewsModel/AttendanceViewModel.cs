@@ -3,7 +3,7 @@ using Medical.Attendance.Domain.Models.Entities;
 
 namespace Medical.Attendance.Application.Events.AttendanceEvents.Models.ViewsModel
 {
-    public class AttendanceViewModel : AttendanceBaseModel
+    public sealed class AttendanceViewModel : AttendanceBaseModel
     {
         public Guid Id { get; set; }
         public PatientViewModel Patient { get; set; }
@@ -21,22 +21,6 @@ namespace Medical.Attendance.Application.Events.AttendanceEvents.Models.ViewsMod
                 Status = attendance.Status,
                 Value = attendance.Value,
                 Patient = PatientViewModel.FromEntity(patient)
-            };
-        }
-    }
-
-    public class PatientViewModel : PatientBaseModel
-    {
-        public Guid Id { get; set; }
-
-        public static PatientViewModel FromEntity(Patient patient)
-        {
-            return new PatientViewModel
-            {
-                Id = patient.Id,
-                ClientId = patient.ClientId,
-                Name = patient.Name,
-                Phone = patient.Phone
             };
         }
     }

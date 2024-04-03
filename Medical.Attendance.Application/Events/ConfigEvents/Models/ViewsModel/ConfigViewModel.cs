@@ -2,7 +2,7 @@
 
 namespace Medical.Attendance.Application.Events.ConfigEvents.Models.ViewsModel
 {
-    public class ConfigViewModel
+    public sealed class ConfigViewModel
     {
         public Guid Id { get; set; }
         public bool IsWorkingHolidays { get; set; }

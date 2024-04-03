@@ -5,7 +5,7 @@ using Medical.Attendance.Infra.Persistence.Configurations;
 
 namespace Medical.Attendance.Application.Events.AttendanceEvents.Handlers
 {
-    public class AddAttendanceHandler(SqlServerDbContext sqlServerDbContext) : IRequestHandler<AddAttendanceCommand, AttendanceViewModel>
+    public sealed class AddAttendanceHandler(SqlServerDbContext sqlServerDbContext) : IRequestHandler<AddAttendanceCommand, AttendanceViewModel>
     {
         private readonly SqlServerDbContext _sqlServerDbContext = sqlServerDbContext;
 

@@ -2,7 +2,7 @@
 
 namespace Medical.Attendance.Application.Events.ConfigEvents.Models.ViewsModel
 {
-    public class HourViewModel
+    public sealed class HourViewModel
     {
         public Guid Id { get; set; }
         public DateTime Hour { get; set; }
