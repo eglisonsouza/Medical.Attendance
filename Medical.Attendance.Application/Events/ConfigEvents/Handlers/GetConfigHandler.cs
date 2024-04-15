@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Medical.Attendance.Application.Events.ConfigEvents.Commands;
 using Medical.Attendance.Application.Events.ConfigEvents.Models.ViewsModel;
-using Medical.Attendance.Infra.Persistence.Configurations;
+using Medical.Attendance.Infra.Persistence.Configurations.SqlServer;
 using Microsoft.EntityFrameworkCore;
 
 namespace Medical.Attendance.Application.Events.ConfigEvents.Handlers

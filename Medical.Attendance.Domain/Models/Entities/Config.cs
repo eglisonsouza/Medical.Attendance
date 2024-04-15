@@ -6,5 +6,6 @@ namespace Medical.Attendance.Domain.Models.Entities
     {
         public bool IsWorkingHolidays { get; private set; } = isWorkingHolidays;
         public List<Day> WorkDays { get; private set; }
+        public Guid DoctorId { get; set; }
     }
 }

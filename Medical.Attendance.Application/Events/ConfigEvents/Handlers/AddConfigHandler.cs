@@ -3,7 +3,7 @@ using Medical.Attendance.Application.Events.ConfigEvents.Commands;
 using Medical.Attendance.Application.Events.ConfigEvents.Models.InputsModel;
 using Medical.Attendance.Application.Events.ConfigEvents.Models.ViewsModel;
 using Medical.Attendance.Domain.Models.Entities;
-using Medical.Attendance.Infra.Persistence.Configurations;
+using Medical.Attendance.Infra.Persistence.Configurations.SqlServer;
 
 namespace Medical.Attendance.Application.Events.ConfigEvents.Handlers
 {

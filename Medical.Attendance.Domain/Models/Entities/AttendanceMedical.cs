@@ -29,5 +29,10 @@ namespace Medical.Attendance.Domain.Models.Entities
             Status = status;
             Value = value;
         }
+
+        public int GetCalculateDurationInMinutes()
+        {
+            return (Start - End).Minutes;
+        }
     }
 }

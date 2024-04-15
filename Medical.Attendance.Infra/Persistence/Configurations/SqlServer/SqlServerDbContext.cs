@@ -1,7 +1,7 @@
 ﻿using Medical.Attendance.Domain.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Medical.Attendance.Infra.Persistence.Configurations
+namespace Medical.Attendance.Infra.Persistence.Configurations.SqlServer
 {
     public sealed class SqlServerDbContext(DbContextOptions<SqlServerDbContext> options) : DbContext(options)
     {

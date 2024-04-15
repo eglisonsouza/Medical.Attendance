@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Medical.Attendance.Infra.Persistence.EntitiesConfiguration.Base
+namespace Medical.Attendance.Infra.Persistence.Configurations.SqlServer.EntitiesConfiguration.Base
 {
     public class BaseConfiguration<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : BaseEntity
     {

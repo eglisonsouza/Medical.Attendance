@@ -1,8 +1,8 @@
 ﻿using Medical.Attendance.Domain.Models.Entities;
-using Medical.Attendance.Infra.Persistence.EntitiesConfiguration.Base;
+using Medical.Attendance.Infra.Persistence.Configurations.SqlServer.EntitiesConfiguration.Base;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Medical.Attendance.Infra.Persistence.EntitiesConfiguration
+namespace Medical.Attendance.Infra.Persistence.Configurations.SqlServer.EntitiesConfiguration
 {
     public class DayConfiguration : BaseConfiguration<Day>
     {

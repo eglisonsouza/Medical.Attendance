@@ -1,4 +1,6 @@
-﻿using Medical.Attendance.Infra.Persistence.Configurations;
+﻿using Medical.Attendance.Domain.Repositories;
+using Medical.Attendance.Infra.Persistence.Configurations.SqlServer;
+using Medical.Attendance.Infra.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +14,7 @@ namespace Medical.Attendance.Ioc
         {
             services.AddDatabase(configuration);
             services.AddHealthChecksInfra(configuration);
+            services.AddRepositories();
             return services;
         }
 
@@ -27,6 +30,11 @@ namespace Medical.Attendance.Ioc
             services
                 .AddHealthChecks()
                 .AddSqlServer(configuration.GetSection("Settings").GetConnectionString("SqlServerConnection")!);
+        }
+
+        private static void AddRepositories(this IServiceCollection services)
+        {
+            services.AddScoped<IScheduleRepository, ScheduleRepository>();
         }
     }
 }
