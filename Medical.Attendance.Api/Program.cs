@@ -24,4 +24,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+app.SetupBus().Run();
