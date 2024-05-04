@@ -8,7 +8,7 @@ namespace Medical.Attendance.Application.Events.AttendanceEvents.Models.ViewsMod
         public Guid Id { get; set; }
         public PatientViewModel Patient { get; set; }
 
-        public static AttendanceViewModel FromEntity(AttendanceMedical attendance, Patient patient)
+        public static AttendanceViewModel FromEntity(AttendanceMedical attendance)
         {
             return new AttendanceViewModel
             {
@@ -20,7 +20,7 @@ namespace Medical.Attendance.Application.Events.AttendanceEvents.Models.ViewsMod
                 HealthInsurance = attendance.HealthInsurance,
                 Status = attendance.Status,
                 Value = attendance.Value,
-                Patient = PatientViewModel.FromEntity(patient)
+                Patient = PatientViewModel.FromEntity(attendance.Patient)
             };
         }
     }

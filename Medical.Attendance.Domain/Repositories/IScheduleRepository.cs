@@ -6,6 +6,6 @@ namespace Medical.Attendance.Domain.Repositories
     public interface IScheduleRepository
     {
         Task<Config> GetConfigAsync(Guid doctorId);
-        List<DaysSchedulesDto> GetDaysSchedules(DateTime MonthReference, Guid doctorId);
+        List<DaysSchedulesDto> GetDaysSchedules(DateTime dateReference, Guid doctorId);
     }
 }

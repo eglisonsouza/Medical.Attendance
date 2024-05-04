@@ -1,23 +1,22 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Medical.Attendance.Application.Events.AttendanceEvents.Commands;
 using Medical.Attendance.Application.Events.AttendanceEvents.Models.ViewsModel;
-using Medical.Attendance.Infra.Persistence.Configurations.SqlServer;
+using Medical.Attendance.Domain.Models.Entities;
+using Medical.Attendance.Domain.Repositories;
 
 namespace Medical.Attendance.Application.Events.AttendanceEvents.Handlers
 {
-    public sealed class AddAttendanceHandler(SqlServerDbContext sqlServerDbContext) : IRequestHandler<AddAttendanceCommand, AttendanceViewModel>
+    public sealed class AddAttendanceHandler(IAttendanceRepository repository, IMapperBase mapper) : IRequestHandler<AddAttendanceCommand, AttendanceViewModel>
     {
-        private readonly SqlServerDbContext _sqlServerDbContext = sqlServerDbContext;
+        private readonly IAttendanceRepository _repository = repository;
+        private readonly IMapperBase _mapper = mapper;
 
         public async Task<AttendanceViewModel> Handle(AddAttendanceCommand request, CancellationToken cancellationToken)
         {
-            var patient = await _sqlServerDbContext.Patients.AddAsync(request.Patient.ToEntity(), cancellationToken);
+            var attendance = await _repository.AddAsync(_mapper.Map<AttendanceMedical>(request), cancellationToken);
 
-            var attendance = await _sqlServerDbContext.AttendancesMedical.AddAsync(request.ToEntity(patient.Entity.Id), cancellationToken);
-
-            await _sqlServerDbContext.SaveChangesAsync(cancellationToken);
-
-            return AttendanceViewModel.FromEntity(attendance.Entity, patient.Entity);
+            return _mapper.Map<AttendanceViewModel>(attendance);
         }
     }
 }

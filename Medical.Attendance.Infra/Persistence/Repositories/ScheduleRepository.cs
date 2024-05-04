@@ -15,9 +15,9 @@ namespace Medical.Attendance.Infra.Persistence.Repositories
             return _context.Configs.Include(c => c.WorkDays).FirstAsync(c => c.DoctorId.Equals(doctorId));
         }
 
-        public List<DaysSchedulesDto> GetDaysSchedules(DateTime MonthReference, Guid doctorId)
+        public List<DaysSchedulesDto> GetDaysSchedules(DateTime dateReference, Guid doctorId)
         {
-            var attendances = _context.AttendancesMedical.Where(a => a.Start.Month.Equals(MonthReference.Month) && a.DoctorId.Equals(doctorId));
+            var attendances = _context.AttendancesMedical.Where(a => a.Start.Month.Equals(dateReference.Month) && a.DoctorId.Equals(doctorId));
 
             return attendances.Select(a => new DaysSchedulesDto(a.Start, a.GetCalculateDurationInMinutes())).ToList();
         }

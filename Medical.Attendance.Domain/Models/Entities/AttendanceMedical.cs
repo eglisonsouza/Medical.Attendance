@@ -15,12 +15,13 @@ namespace Medical.Attendance.Domain.Models.Entities
         public AttendanceStatus Status { get; private set; }
         public Guid TransactionId { get; private set; }
         public decimal Value { get; private set; }
-        public Patient Patient { get; private set; }
+        public Patient Patient { get; set; }
         public Doctor Doctor { get; private set; }
 
-        public AttendanceMedical(Guid patientId, Guid doctorId, Guid proceduralMedicalId, DateTime start, DateTime end, string healthInsurance, AttendanceStatus status, decimal value)
+        public AttendanceMedical(Patient patient, Guid doctorId, Guid proceduralMedicalId, DateTime start, DateTime end, string healthInsurance, AttendanceStatus status, decimal value)
         {
-            PatientId = patientId;
+            Patient = patient;
+            PatientId = patient.ClientId;
             DoctorId = doctorId;
             ProceduralMedicalId = proceduralMedicalId;
             Start = start;
